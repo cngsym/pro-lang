@@ -47,8 +47,7 @@ bw_m= bwr_m .* bwg_m .* bwb_m;
 bw3_m = cat(3, bw_m,bw_m,bw_m);
 img_m = uint8(double(im) .* bw3_m);
  
-% figure(7);
-% imshow(img_m)
+
 %% turuncu bonibonlar
  
 bwr_t= abs(double(r) - 250) <= 50;
@@ -71,8 +70,7 @@ bw_k= bwr_k .* bwg_k.* bwb_k;
 bw3_k = cat(3, bw_k,bw_k,bw_k);
 img_k = uint8(double(im) .* bw3_k);
  
-% figure(11);
-% imshow(img_k)
+
 %% kahverengi bonibonlar
  
 bwr_kh= abs(double(r) - 55) <= 40;
