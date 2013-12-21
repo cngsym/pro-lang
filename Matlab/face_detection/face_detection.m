@@ -41,7 +41,7 @@ s = 1;
  % j ' ikiden baslatiyoruz ki   her bir beyaz bölgenin(yuzun) agirlik
  % merkezini bulalim.
 figure(8) ;imshow(I)
-% asagidaki for döngüsü ilede yuzleri tek tek ayiriyoruz.
+% asagidaki for döngüsü ile de yuzleri tek tek ayiriyoruz.
 for i = 1:2:length(a)
         x =  (a(i)-50);
         y = (a(j)-50);
