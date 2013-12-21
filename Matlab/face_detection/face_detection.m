@@ -3,7 +3,7 @@ I=imread('harry_potter.jpg');
 
 
 
-% asagida renk donusumu yapisi olusturuyoruz ve  renklerin daha keskin hale
+% Asagida renk donusumu yapisi olusturuyoruz ve  renklerin daha keskin hale
 % gelmesini sagliyoruz 
 
 cform = makecform('srgb2lab'); 
@@ -28,20 +28,21 @@ bw2=im2bw(yeni_form(:,:,3),level2); % figure(6);imshow(bw2)
 bw=bw1.*bw2;
 
 bw = bwareaopen(bw,80);  % 80 pixelden kucuk olanlar kaldiriyoruz.
-bw = imfill(bw,'holes'); % figure(7);imshow(bw)
+bw = imfill(bw,'holes');  figure(7);imshow(bw)
 
 c = regionprops(bw, 'Centroid');
 a = [c.Centroid];
+a; % a ' da merkezler tutulmaktadir.
 
- % x ve y degerleri her bir yüzün agl?rl?k merkezinin x ve y
+ % x ve y degerleri her bir yüzün agirlik merkezinin x ve y
  % koordinatlaridir
 j = 2;
 s = 1;
 
 figure(8) ;imshow(I)
 for i = 1:2:length(a)
-        x =  (a(i)-50)
-        y = (a(j)-50)
+        x =  (a(i)-50);
+        y = (a(j)-50);
         
         Ii = imcrop(I,[x y 100 100]);
         imwrite(Ii,num2str(s,'face_%02d.jpg'));
